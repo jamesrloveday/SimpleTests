@@ -57,7 +57,7 @@ class ArrayManipulator {
 }
 
 class StringSearch {
-    var stringList: List<String> = listOf("Architect", "Software engineer", "Quantity surveyor", "Accountant")
+    val stringList: List<String> = listOf("Architect", "Software engineer", "Quantity surveyor", "Accountant")
 
     fun processInput(arg: String): String {
         var split = arg.split(" ")
@@ -68,18 +68,9 @@ class StringSearch {
         }
         return "No match found"
     }
-
 }
 
-class SplitStrings {
-    var firstString: String = ""
-    var lastString: String = ""
-
-    constructor(first: String, second: String = "") {
-        firstString = first
-        lastString = second
-    }
-}
+data class SplitStrings(var firstString: String = "", var lastString: String = "")
 
 
 fun main(args: Array<String>) {
