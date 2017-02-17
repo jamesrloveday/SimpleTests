@@ -83,9 +83,13 @@ class SplitStrings {
 
 
 fun main(args: Array<String>) {
-    var bigArray = generateBigArray()
-    println("Here are the stats: " + ArrayManipulator().getAllStats(bigArray))
+    if(args.isEmpty()) {
+        println("Nothing used as a search argument may I suggest Java engineer")
+    } else {
+        var bigArray = generateBigArray()
+        println("Here are the stats: " + ArrayManipulator().getAllStats(bigArray))
 
-    var search = StringSearch()
-    println("Here is the search: " + search.processInput(args[0] + " " + args[1]))
+        var search = StringSearch()
+        println("Here is the search: " + search.processInput(args[0] + " " + args[1]))
+    }
 }
