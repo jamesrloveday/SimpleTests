@@ -62,12 +62,9 @@ class StringSearch {
     fun processInput(arg: String): String {
         var split = arg.split(" ")
         var stringToUse = SplitStrings(split[0], split[1])
-        if(!stringToUse.lastString.isBlank()) {
-            if(split[1].equals(stringToUse.lastString)) {
-                return stringToUse.firstString + " " + stringToUse.lastString
-            } else {
-              return stringToUse.firstString
-            }
+
+        stringList.listIterator().forEach { it ->
+            if(it.contains(stringToUse.lastString)) return it
         }
         return "No match found"
     }
